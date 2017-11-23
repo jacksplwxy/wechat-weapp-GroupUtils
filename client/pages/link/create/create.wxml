@@ -1,0 +1,33 @@
+<view>
+  <view class='title'>接龙标题: <text style='color:red;'>(必填)</text> </view>
+  <input placeholder='如："五人制足球赛"' value='{{title}}' bindinput='bindTitleInput' maxlength='32' focus='true'></input>
+  <view class='title'>活动时间:</view>
+  <view class='select-time'>
+    <picker mode="date" value="{{date}}" start="{{date}}"  bindchange="bindDateChange" style='border-bottom: 1px solid #ccc;'>
+      <view class="picker">
+        日 期:   {{date}}
+      </view>
+    </picker>
+    <picker mode="time" value="{{time}}" start="{{time}}" bindchange="bindTimeChange">
+      <view class="picker">
+        时 间:   {{time}}
+      </view>
+    </picker>
+  </view>
+  <view class='title'>活动地点:</view>
+  <view class='location'>
+    <input placeholder='输入地点' style='width:73%;' value='{{address}}' bindinput='bindAddressInput'></input>
+    <view bindtap='getMap'>
+      <image src='../../imgs/location.svg' style='width:20px;'></image>
+      地图
+    </view>
+  </view>
+   <view class='title'>发起人:</view>
+   <view class='creater'>
+    <view style='border-bottom:1px solid #ccc;'>姓    名:<input value='{{name}}' bindinput='bindNameInput'></input></view>
+    <view>联系方式:<input value='{{tel}}' bindinput='bindTelInput' type='number'></input></view>
+   </view>
+  <view class='title'>备注:</view>
+  <textarea auto-height placeholder="如：'带白色球衣'" value='{{remark}}' bindblur='bindRemarkInput'/>
+  <button class='ok' bindtap='ok'>创建接龙</button>
+</view>

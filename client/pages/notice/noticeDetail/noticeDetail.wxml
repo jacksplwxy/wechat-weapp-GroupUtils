@@ -1,0 +1,36 @@
+<view style='padding:10rpx 40rpx;box-sizing: border-box;background:#fff;'>
+  <view class='bg-title'>群通知</view>
+  <view class='bg-infor'>本群发 [{{year}}] {{baseData.fileNumber}}号</view>
+  <view class='bg-star'>
+    <view></view>
+    <image src='../../../imgs/star.svg' style='width:50rpx;height:50rpx;margin:0 16rpx;'></image>
+    <view></view>
+  </view>
+</view>
+<view style='padding:10rpx 40rpx;box-sizing: border-box;background:#fff;'>
+  <view class='title'>{{baseData.title}}</view>
+  <textarea placeholder="输入通知内容" class="textContent" bindblur='bindDescribeInput' value='{{baseData.description}}' />
+  <view class='sign'>
+    <view class='content'>
+      <view>{{baseData.name}}</view>
+      <view>{{baseData.date}}</view>
+    </view>
+     <image src='../../../imgs/committee.jpg' class='cachet-star'></image>
+    <!-- <view class='cachet'>
+      <view>群</view>
+      <view>管</view>
+      <view>理</view>
+      <view>委</view>
+      <view>员</view>
+      <view>会</view>
+      <image src='../../../imgs/star.svg' class='cachet-star'></image>
+    </view> -->
+     
+  </view>
+</view>
+
+<view class='viewer'>
+  <image wx:for="{{viewer}}" src='{{item.avatarUrl}}' ></image>
+</view>
+
+<button open-type='share'  class='share'></button>

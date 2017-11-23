@@ -1,0 +1,32 @@
+<view style='postion:relative;'>
+  <view>
+    <view wx:if="{{showMessage}}" style='text-align:center;margin:20rpx;'>请在微信群内打开，方能查看该群通讯录</view>
+    <view wx:for="{{phoneList}}" class='phoneList' data-id='{{item.id}}' bindtap='showDetail'>
+      <view>
+        <image src="{{item.avatarUrl}}" style='width:70rpx;height:70rpx;border-radius:50%;margin-right:20rpx;'></image>
+        <text>{{item.name}}</text>
+      </view>
+      <view>{{item.tel}}</view>
+    </view>
+  </view>
+
+  <button bindtap='uploadInfor' class='uploadInfor' type='primary'>上传我的名片</button>
+
+  <view class='detail {{detailShow ? "on":""}}'>
+    <view class='toast' bindtap='close'></view>
+    <view class='content'>
+      <image src='../../../imgs/close.svg' class='close' bindtap='close'></image>
+      <view style='display:flex;justify-content: space-between;'>
+        <image src="{{detailInfor.avatarUrl}}" style='width:200rpx;height:200rpx;border-radius:5%'></image>
+        <view style='width:350rpx;display:flex;flex-direction:column;justify-content: space-between'>
+          <view>{{detailInfor.name}}</view>
+          <view>{{detailInfor.tel}}</view>
+          <view style='line-height:38rpx;'>地址：{{detailInfor.address}}</view>
+        </view>
+      </view>
+
+      <view style='margin-top:30rpx;height:300rpx;overflow:hidden;height:200rpx;'>{{detailInfor.remark}}</view>
+    </view>
+  </view>
+
+</view>

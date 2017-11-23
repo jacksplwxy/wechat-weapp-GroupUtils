@@ -1,0 +1,24 @@
+<view>
+
+  <view style='margin-top:30rpx;'>
+    <input placeholder='姓 名' value='{{name}}' bindinput='bindNameInput'></input>
+  </view>
+
+  <view class='location'>
+    <input placeholder='电 话' value='{{tel}}' bindinput='bindTelInput' type='number' style='width:80%;'></input>
+    <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style='width:20%;'>
+      <image src='../../../imgs/tel.svg' style='width:60rpx;margin-bottom:5px;'></image>
+    </button>
+  </view>
+
+
+  <view class='location'>
+    <input placeholder='住址' style='width:80%;' value='{{address}}' bindinput='bindAddressInput'></input>
+    <button bindtap='getMap' style='width:20%;'>
+      <image src='../../../imgs/location.svg' style='width:60rpx;margin-bottom:5px;'></image>
+    </button>
+  </view>
+
+  <textarea auto-height placeholder="备注:" value='{{remark}}' bindblur='bindRemarkInput' />
+  <button class='ok' bindtap='ok'>完 成</button>
+</view>

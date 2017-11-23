@@ -1,0 +1,12 @@
+/**app.wxss**/
+page{
+  background: #f6f6f6;
+  font-size: 30rpx;
+  font-family: "微软雅黑";
+  box-sizing: border-box;
+}
+image {
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+}

@@ -1,0 +1,140 @@
+page {
+  background: #e6e6e6;
+}
+
+.bg-title {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #d81e06;
+  font-family: "黑体";
+  text-align: center;
+  margin: 20rpx;
+}
+
+.bg-infor {
+  text-align: center;
+}
+
+.bg-star {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bg-star view {
+  width: 50%;
+  height: 6rpx;
+  background: #d81e06;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 20rpx 0;
+  padding: 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.textContent {
+  width: 100%;
+}
+
+.sign {
+  text-align: center;
+  float: right;
+  font-size: 32rpx;
+  position: relative;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.content {
+  position: absolute;
+  left: 15%;
+  bottom: 35%;
+  z-index: 2;
+}
+
+.cachet-star {
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  z-index: 1;
+}
+
+/* 
+.cachet {
+  width: 160rpx;
+  height: 160rpx;
+  border: 6rpx solid #d81e06;
+  border-radius: 50%;
+  position: absolute;
+  left: 24%;
+  top: 22%;
+}
+
+.cachet view {
+  position: absolute;
+  left: 42%;
+  top: 42%;
+  font-size: 30rpx;
+  color: #d81e06;
+}
+
+.cachet view:nth-child(1) {
+  transform: rotatez(-85deg) translatey(-66rpx);
+}
+
+.cachet view:nth-child(2) {
+  transform: rotatez(-50deg) translatey(-66rpx);
+}
+
+.cachet view:nth-child(3) {
+  transform: rotatez(-15deg) translatey(-66rpx);
+}
+
+.cachet view:nth-child(4) {
+  transform: rotatez(15deg) translatey(-66rpx);
+}
+
+.cachet view:nth-child(5) {
+  transform: rotatez(50deg) translatey(-66rpx);
+}
+
+.cachet view:nth-child(6) {
+  transform: rotatez(85deg) translatey(-66rpx);
+}
+
+.cachet-star {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 0 16rpx;
+  position: absolute;
+  left: 24%;
+  top: 32%;
+} */
+
+.viewer {
+  background: #fff;
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+
+.viewer image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 10rpx;
+  border-radius: 50%;
+}
+.share{
+  border-radius: 50%;
+  position: absolute;
+  right: 4%;
+  top: 2%;
+  width: 100rpx;
+  height: 100rpx;
+  background: url('https://test.hytips.com/wechat/group/notice/imgs/share.svg') no-repeat 90% ;background-size:cover;
+}

@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/notice/index/index",
+    "pages/notice/noticeDetail/noticeDetail",
+    "pages/notice/create/create",
+    "pages/link/index/index",
+    "pages/link/create/create",
+    "pages/link/enroll/enroll",
+    "pages/vote/index/index",
+    "pages/vote/create/create",
+    "pages/vote/choose/choose",
+    "pages/phoneBook/index/index",
+    "pages/phoneBook/groupPhone/groupPhone",
+    "pages/phoneBook/uploadInfor/uploadInfor"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#338FFF",
+    "navigationBarTextStyle": "dark",
+    "navigationBarTitleText": "同学群",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/notice/index/index",
+        "text": "群通知",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_01.jpg",
+        "selectedIconPath": "imgs/tab_05.jpg"
+      },
+      {
+        "pagePath": "pages/link/index/index",
+        "text": "群接龙",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_02.jpg",
+        "selectedIconPath": "imgs/tab_06.jpg"
+      },
+      {
+        "pagePath": "pages/vote/index/index",
+        "text": "群投票",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_03.jpg",
+        "selectedIconPath": "imgs/tab_07.jpg"
+      },
+      {
+        "pagePath": "pages/phoneBook/index/index",
+        "text": "通讯录",
+        "selectedColor": "#338FFF",
+        "iconPath": "imgs/tab_09.jpg",
+        "selectedIconPath": "imgs/tab_10.jpg"
+      }
+    ]
+  }
+}

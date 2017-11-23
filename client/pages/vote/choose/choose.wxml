@@ -1,0 +1,37 @@
+<view>
+  <image src='../../../imgs/share.svg' class='showShare' bindtap='showShare'></image>
+  <view class='title'>{{taskData.title}}</view>
+  <view class='description'>
+    {{taskData.description}}
+    <text style='color:blue;'>{{taskData.radio=='0'?'[单选]':'[多选]'}} {{taskData.noName=='true' ? '[匿名投票]':''}}</text>
+  </view>
+  <view style='padding:5px 0'>
+    <view wx:for="{{optionData}}" bindtap='voteOne' data-unique='{{item.unique}}'>
+      <view class='option'>
+        <view style='width:70%;overflow:hidden;'>
+          <text>{{item.content}}</text>
+          <image src="../../../imgs/right.svg" class="right {{uniqueClickState[item.unique] ? 'selected' : ''}}"></image>
+        </view>
+        <view>
+          <text>{{item.number}}票</text>
+          <text style='margin-left:16rpx;'>{{item.percent}}%</text>
+        </view>
+      </view>
+      <progress percent="{{item.percent}}" stroke-width="2" color="#346CFF"/>
+      <view style='background:#fff;border-top:1px solid #f6f6f6;' class="{{taskData.noName=='true' ? 'on':''}}">
+        <image class='user-imgs' wx:for="{{item.joiner}}" wx:for-item="itemJoiner" src='{{itemJoiner[1]}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='end-time'>投票截止：{{taskData.date}} {{taskData.time}}</view>
+  <view class='guidance'>步骤：点击勾选你的选项，然后按‘确认投票’按钮，确认后将不可更改。</view>
+
+
+  <button class='ok' bindtap='ok' disabled='{{okWord=="已投票"}}'>{{okWord}}</button>
+
+  <view class="share {{shareHidden ? 'on':''}}" >
+    <button open-type='share'>转发投票</button>
+    <!-- <button>生成朋友圈分享图</button> -->
+    <button bindtap='getQRCode'>生成二维码</button>
+  </view>
+</view>

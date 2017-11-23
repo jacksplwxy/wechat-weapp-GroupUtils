@@ -1,0 +1,48 @@
+<view class='container'>
+  <input placeholder='投票标题' placeholder-style='color:#999;font-size:34rpx;font-weight:bold;' value='{{title}}' bindinput='bindTitleInput' maxlength='32' focus='true' class='title'></input>
+  <input placeholder='补充描述(选填)' placeholder-style='color:#999;font-size:30rpx;' value='{{description}}' bindinput='bindDescribeInput'></input>
+
+
+  <view wx:for="{{optionData}}" wx:key="unique" class='option-container' style='margin-top:30rpx;'>
+    <image src='../../../imgs/reduce.svg' bindtap='reduceOption' data-unique='{{item.unique}}'></image>
+    <input placeholder-style='color:#999;' bindblur="bindBlur" data-unique='{{item.unique}}' value="{{item.content}}" maxlength='32' placeholder='选项'></input>
+  </view>
+
+
+  <view class='option-container-add' bindtap='addOption'>
+    <image src='../../../imgs/add.svg'></image>
+    <text>添加选项</text>
+  </view>
+</view>
+
+<view class='select-time'>
+  <picker mode="date" value="{{date}}" start="{{date}}" bindchange="bindDateChange">
+    <view class="picker">
+      截止日期:
+      <text class='time'>{{date}}</text>
+    </view>
+  </picker>
+  <picker mode="time" value="{{time}}" start="{{time}}" bindchange="bindTimeChange">
+    <view class="picker">
+      截止时间:
+      <text class='time'>{{time}}</text>
+    </view>
+  </picker>
+  <view class="body-view">
+    <text>匿名投票</text>
+    <switch bindchange="switchChange" />
+  </view>
+</view>
+
+<radio-group class="radio-group" bindchange="radioChange">
+  <label>
+    <radio value="0" checked="true" />
+    <text style='margin-left:20rpx'>创建单选投票</text>
+  </label>
+  <label style='margin-top:40rpx;'>
+    <radio value="1" />
+    <text style='margin-left:20rpx'>创建多选投票</text>
+  </label>
+</radio-group>
+
+<button class='ok' bindtap='ok'>完 成</button>

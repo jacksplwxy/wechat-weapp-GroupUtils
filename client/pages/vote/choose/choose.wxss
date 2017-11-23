@@ -1,0 +1,78 @@
+.showShare {
+  width: 90rpx;
+  height: 90rpx;
+  position: absolute;
+  right: 5%;
+  top: 3%;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 30rpx;
+}
+
+.description {
+  margin: 30rpx;
+}
+
+.option {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx;
+  margin-top: 40rpx;
+  align-items: center;
+  box-shadow: 1px 1px 5px #999;
+}
+
+.end-time {
+  margin: 20rpx;
+}
+
+.guidance {
+  color: #999;
+  margin: 20rpx;
+}
+.right {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+  display: none;
+}
+.selected{
+  display: inline-block;
+}
+.ok{
+  width: 80%;
+  margin: 80rpx auto;
+  background: #346CFF;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.user-imgs{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  margin:10rpx 20rpx;
+  margin-left: 30rpx;
+}
+.on{
+  display: none;
+}
+.share{
+  position: fixed;
+  width: 80%;
+  height: 279rpx;
+  left: 10%;
+  top: 860rpx;
+  
+  border-radius: 10rpx;
+}
+.share button{
+  background: green;
+  height: 93rpx;
+  width: 100%;
+  color:white;
+}

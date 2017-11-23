@@ -1,0 +1,57 @@
+<view>
+  <view class='card'>
+    <view style='font-weight:bold'>{{taskData.title}}</view>
+    <view>
+      <text style='color:#666;'>时 间：</text> {{taskData.date}} {{taskData.time}}</view>
+    <view wx:if='{{taskData.address}}'>
+      <text style='color:#666;'>地 址：</text> {{taskData.address}}</view>
+    <view wx:if='{{taskData.name}} || {{taskData.tel}}'>
+      <text style='color:#666;'>发 起：</text> {{taskData.name}} {{taskData.tel}}</view>
+    <view wx:if='{{taskData.remark}}'>
+      <text style='color:#666;'>备 注：</text> {{taskData.remark}}</view>
+    <view style='color:#666;'>
+      报名(
+      <text style='color:red;'>{{joinerNumber}}</text>)/浏览(
+      <text style='color:red;'>{{viewerNumber}}</text>)
+    </view>
+    <button open-type='share' type='primary' size='mini' style='margin-top:20rpx;'>转发活动</button>
+  </view>
+  <view wx:if='{{joinerData[0].userid}}'>
+    <view wx:for="{{joinerData}}" class='joinerList'>
+      <view style='  display: flex;justify-content: space-between;line-height:80rpx;'>
+        <view>
+          <image src='{{item.avatarUrl}}' style='height:80rpx;width:80rpx;border-radius:50%;margin-right:30rpx;'></image>
+          <text>{{item.joinerName!=''?item.joinerName:item.nickName}}</text>
+        </view>
+        <text>{{item.joinerTel}}</text>
+      </view>
+      <view style='color:#999;margin-top:10rpx;'>{{item.joinerRemark}}</view>
+    </view>
+  </view>
+
+  <button class='ok' bindtap='ok'>{{okWord}}</button>
+
+  <view class='enrollToast' wx:if='{{enrollToast}}'>
+    <view class='toast'></view>
+    <view class='content'>
+      <view style='padding:20rpx;'>
+        <view style='text-align:center;height:80rpx;line-height:80rpx;font-weight:bold;'>活动报名</view>
+        <view class='toast-infor'>
+          <view>姓 名：
+            <input value='{{joinerName}}' bindinput='bindJoinerNameInput'></input>
+          </view>
+          <view>联 系：
+            <input value='{{joinerTel}}' bindinput='bindJoinerTelInput' type='number'></input>
+          </view>
+          <view>备 注：
+            <input value='{{joinerRemark}}' bindinput='bindJoinerRemarkInput'></input>
+          </view>
+        </view>
+      </view>
+      <view class='toast-button'>
+        <view style='border-right:1px solid #ccc;' bindtap='cancel'>取 消</view>
+        <view bindtap='join' style='color:green;'>确 定</view>
+      </view>
+    </view>
+  </view>
+</view>

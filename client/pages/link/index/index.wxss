@@ -1,0 +1,38 @@
+.tab {
+  background: #fff;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 32rpx;
+  line-height: 80rpx;
+  color: #999;
+}
+
+.tab view {
+  width: 33%;
+}
+.on{
+  color: #333;
+  border-bottom: 4rpx solid #338fff;
+  
+}
+
+.creat{
+  position: fixed;
+  bottom: 10rpx;
+  left: 30%;
+  background: #338fff;
+  border-radius: 10rpx;
+  width: 40%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 4rpx;
+  text-align: center;
+}
+.item{
+  padding: 30rpx;
+  background: #fff;
+  margin-top: 20rpx;
+}

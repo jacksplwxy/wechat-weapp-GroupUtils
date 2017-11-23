@@ -1,0 +1,76 @@
+input{
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+}
+.container{
+  padding: 30rpx;
+  background: #fff;
+}
+.title{
+  font-size:34rpx;
+  font-weight:bold;
+}
+.option-container{
+  display:flex;
+  align-items:center;
+}
+.option-container image{
+  width:50rpx;
+  height:50rpx;
+  margin-right: 30rpx;
+}
+.option-container-add{
+  display:flex;
+  align-items:center;
+  margin-top: 30rpx;
+  color: #338FFF;
+}
+.option-container-add image{
+  width:45rpx;
+  height:45rpx;
+  margin-right: 30rpx;
+}
+.select-time{
+  background: #fff;
+  padding-left: 30rpx;
+  margin-top: 40rpx;
+}
+.select-time view{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1px solid #ccc;
+}
+.time{
+  display: inline-block;
+  margin-left: 20rpx;
+  color: #666;
+}
+.body-view{
+  color: #333;
+  height: 100rpx;
+  line-height: 10rpx;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20rpx;
+}
+
+.ok{
+  width: 80%;
+  margin: 60rpx auto;
+  background: #346CFF;
+  color: #fff;
+}
+.radio-group{
+  background: #fff;
+  padding: 30rpx;
+  margin-top: 40rpx;
+}
+label{
+  display:flex;
+  align-items: center;
+}
+radio{
+  width: 50rpx;
+}

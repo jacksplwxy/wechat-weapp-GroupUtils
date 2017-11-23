@@ -1,0 +1,25 @@
+<view style='padding:10rpx 40rpx;box-sizing: border-box;background:#fff;'>
+  <view class='bg-title'>群通知</view>
+  <view class='bg-infor'>本群发 [{{year}}] {{fileNumber}}号</view>
+  <view class='bg-star'>
+    <view></view>
+    <image src='../../../imgs/star.svg' style='width:50rpx;height:50rpx;margin:0 16rpx;'></image>
+    <view></view>
+  </view>
+</view>
+<view style='padding:10rpx 40rpx;box-sizing: border-box;background:#fff;'>
+  <input placeholder='输入通知标题' placeholder-style='color:#bbb;font-size:40rpx;font-weight:bold;text-align:center;' value='{{title}}' bindinput='bindTitleInput' maxlength='32' focus='true' class='title'></input>
+  <textarea placeholder="输入通知内容" class="textContent"  bindblur='bindDescribeInput' value='{{description}}'/>
+</view>
+<view class='option'>
+  <view style='border-bottom: 1px solid #ccc;'>
+    文 号:
+    <input value='{{fileNumber}}' bindinput='bindFileNumberInput' type='number'></input>
+  </view>
+  <view>
+    署 名:
+    <input value='{{name}}' bindinput='bindNameInput'></input>
+  </view>
+</view>
+
+<button class='ok' bindtap='ok'>完 成</button>

@@ -1,0 +1,13 @@
+<view style="background: url('https://test.hytips.com/wechat/group/phoneBook/imgs/phoneBook.jpg') no-repeat 60% ;background-size:cover;" class='background'>
+
+  <view class='cover'></view>
+  <view class='content'>
+    <view>
+      <image src='{{avatarUrl}}' style='width:160rpx;height:160rpx;border-radius:50%;'></image>
+      <view style='font-size:40rpx;'>{{nickName}}</view>
+    </view>
+
+    <button type='primary' open-type='share' style='font-size:32rpx;'>转发微信群，查看群通讯录</button>
+  </view>
+  
+</view>
