@@ -5,8 +5,8 @@ Page({
     nickName:'',
   },
   onLoad: function (opt) {
-    app.globalData.fromClickId = opt.fromClickId //获取从哪个点击序列号打开的(必要)
-    wx.showShareMenu({  //定义转发时携带shareTicket (必要)
+    app.globalData.fromClickId = opt.fromClickId
+    wx.showShareMenu({
       withShareTicket: true
     })
     if (app.globalData.userInfo.avatarUrl){ 

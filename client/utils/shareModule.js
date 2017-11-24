@@ -55,7 +55,7 @@ let getUserNetwork = (app, opt) => {
   function storeDataIntoClickTable(app, data){ 
     wx.request({
       url: 'https://test.hytips.com/wechat/userNetwork/WXClickDeal.php',
-      data: finalData,
+      data,
       dataType: 'JSONP',
       success: (res) => {
         let clickId = JSON.parse(res.data).clickId

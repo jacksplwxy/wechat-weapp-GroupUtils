@@ -36,10 +36,11 @@ Page({
     shareHidden: true, //分享面板隐藏
   },
   onLoad: function (opt) {
-    app.globalData.fromClickId = opt.fromClickId
+    app.globalData.fromClickId= opt.fromClickId
     wx.showShareMenu({
       withShareTicket: true
     })
+
     var that = this;
     that.setData({
       voteid: opt.voteid,
@@ -89,7 +90,7 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     return {
-      path: '/pages/vote/choose/choose?voteid=' + that.data.voteid + '&fromClickId =' + app.globalData.clickId,
+      path: '/pages/vote/choose/choose?voteid=' + that.data.voteid + '&fromClickId=' + app.globalData.clickId,
       success: function (res) {
         var shareTickets = res.shareTickets;
         if (!shareTickets) {

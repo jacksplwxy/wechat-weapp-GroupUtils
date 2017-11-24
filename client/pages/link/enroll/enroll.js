@@ -40,7 +40,7 @@ Page({
     joinerRemark: '',
   },
   onLoad: function (opt) {
-    app.globalData.fromClickId = opt.fromClickId 
+    app.globalData.fromClickId = opt.fromClickId
     wx.showShareMenu({
       withShareTicket: true
     })

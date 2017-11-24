@@ -7,7 +7,7 @@ Page({
     viewer: '',
   },
   onLoad: function (opt) {
-    app.globalData.fromClickId= opt.fromClickId
+    app.globalData.fromClickId = opt.fromClickId
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -28,7 +28,7 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     return {
-      path: '/pages/notice/noticeDetail/noticeDetail?noticeid=' + that.data.noticeid + '&fromClickId= ' + app.globalData.clickId,
+      path: '/pages/notice/noticeDetail/noticeDetail?noticeid=' + that.data.noticeid + '&fromClickId=' + app.globalData.clickId,
       success: function (res) {
         var shareTickets = res.shareTickets;
         if (!shareTickets) {
