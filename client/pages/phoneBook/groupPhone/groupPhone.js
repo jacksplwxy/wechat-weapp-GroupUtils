@@ -7,7 +7,8 @@ Page({
     detailInfor: '',
     detailShow: false,
   },
-  onLoad: function () {
+  onLoad: function (opt) {
+    app.globalData.fromClickId = opt.fromClickId
     if (app.globalData.enterGId) {
       this.setData({ showMessage: false})
       this.requestPhoneList(app.globalData.enterGId);

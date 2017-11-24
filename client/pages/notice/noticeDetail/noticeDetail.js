@@ -7,6 +7,7 @@ Page({
     viewer: '',
   },
   onLoad: function (opt) {
+    app.globalData.fromClickId= opt.fromClickId
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -27,10 +28,10 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     return {
-      path: '/pages/notice/noticeDetail/noticeDetail?noticeid=' + that.data.noticeid,
+      path: '/pages/notice/noticeDetail/noticeDetail?noticeid=' + that.data.noticeid + '&fromClickId= ' + app.globalData.clickId,
       success: function (res) {
         var shareTickets = res.shareTickets;
-        if (shareTickets.length == 0) {
+        if (!shareTickets) {
           return false;
         }
         wx.getShareInfo({
@@ -49,17 +50,14 @@ Page({
               dataType: 'JSONP',
               success: function (res) {
                 var GId = JSON.parse(res.data.substring(res.data.indexOf('{'), res.data.lastIndexOf('}') + 1)).openGId;
-                console.log('转发时获取的GID为:' + GId)
                 wx.request({
                   url: app.globalData.host + '/application/notice/storeNoticeGId.php',
                   data: {
                     gid: GId,
-                    noticeid:that.data.noticeid,
+                    noticeid: that.data.noticeid,
                   },
                   dataType: 'JSONP',
-                  success: function (res) {
-                    console.log(res.data)
-                  }
+                  success: function (res) {}
                 });
               }
             });

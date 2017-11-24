@@ -25,7 +25,7 @@ Page({
   },
   onShareAppMessage: function () {
     return {
-      path: 'pages/phoneBook/groupPhone/groupPhone',
+      path: 'pages/phoneBook/groupPhone/groupPhone?fromClickId=' + app.globalData.clickId,
       success: res => {
         console.log('转发成功！')
       }

@@ -7,7 +7,7 @@
 const getUserNetwork = require('utils/shareModule.js').getUserNetwork; //引入用户关系网追踪模块
 App({
   globalData: {
-    host: 'http://192.168.1.107',
+    host: 'http://192.168.1.108',
     AppID: 'wx8f14d85e38a5e092',
     secret: 'e15db9aaff28bcd7f2091613a43fd914',
     openid: '',
@@ -17,7 +17,6 @@ App({
     enterGId: '',//程序启动时获取的群ID
   },
   onLaunch: function (opt) {
-    getUserNetwork(this, opt) //将用户及群关系存储到数据库
     this.globalData.opt = opt;
     this.login();
   },
@@ -27,7 +26,7 @@ App({
       .then(getOpenId)
       .then(getGId)
       .then(gIdCallback)
-    let that = this;
+    const that = this;
     function wxLogin() {
       return new Promise((resolve, reject) => {
         wx.login({
@@ -63,6 +62,7 @@ App({
         let data0 = JSON.parse(res.data);
         that.globalData.openid = data0.openid;
         that.globalData.session_key = data0.session_key;
+        getUserNetwork(that, that.globalData.opt) //将用户及群关系存储到数据库
         if (that.noticeOpenIdReadyCallback) { //群通知页面定义app.noticeOpenIdReadyCallback实现回调
           that.noticeOpenIdReadyCallback(data0.openid)
         }
@@ -154,9 +154,7 @@ App({
         province: userInfo.province,//用户信息：省份
       },
       dataType: 'JSONP',
-      success: (res) => {
-        console.log('用户详情信息存储成功')
-      }
+      success: (res) => {}
     });
   },
 })

@@ -40,6 +40,7 @@ Page({
     joinerRemark: '',
   },
   onLoad: function (opt) {
+    app.globalData.fromClickId = opt.fromClickId 
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -51,7 +52,7 @@ Page({
       title: '加载中...',
     })
     wx.request({  //请求接龙任务的详情数据
-      url: app.globalData.host + '/application/link/getjielongtask.php',
+      url: `${app.globalData.host}/application/link/getjielongtask.php`,
       data: {
         taskid: opt.taskid,
       },
@@ -63,7 +64,7 @@ Page({
           taskData: data0
         })
         wx.request({  //请求任务的参与者列表
-          url: app.globalData.host + '/application/link/getTaskJoiner.php',
+          url: `${app.globalData.host}/application/link/getTaskJoiner.php`,
           data: {
             taskid: opt.taskid,
           },
@@ -127,10 +128,10 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     return {
-      path: '/pages/link/enroll/enroll?taskid=' + that.data.taskid,
+      path: `/pages/link/enroll/enroll?taskid=${that.data.taskid}&fromClickId=${app.globalData.clickId}`,
       success: function (res) {
         var shareTickets = res.shareTickets;
-        if (shareTickets.length == 0) {
+        if (!shareTickets) {
           return false;
         }
         wx.getShareInfo({

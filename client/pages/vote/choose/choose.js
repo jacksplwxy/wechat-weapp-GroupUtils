@@ -36,6 +36,7 @@ Page({
     shareHidden: true, //分享面板隐藏
   },
   onLoad: function (opt) {
+    app.globalData.fromClickId = opt.fromClickId
     wx.showShareMenu({
       withShareTicket: true
     })
@@ -88,10 +89,10 @@ Page({
   onShareAppMessage: function (res) {
     var that = this;
     return {
-      path: '/pages/vote/choose/choose?voteid=' + that.data.voteid,
+      path: '/pages/vote/choose/choose?voteid=' + that.data.voteid + '&fromClickId =' + app.globalData.clickId,
       success: function (res) {
         var shareTickets = res.shareTickets;
-        if (shareTickets.length == 0) {
+        if (!shareTickets) {
           return false;
         }
         wx.getShareInfo({
@@ -256,15 +257,15 @@ Page({
     var that = this;
     wx.request({
       //url: app.globalData.host + '/application/vote/getQRCode.php',
-      url:'https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode',
+      url: 'https://api.weixin.qq.com/cgi-bin/wxaapp/createwxaqrcode',
       data: {
         session_key: app.globalData.session_key,
-        path: "pages/vote/choose/choose?voteid="+that.data.voteid,
+        path: "pages/vote/choose/choose?voteid=" + that.data.voteid,
         width: 430
       },
       dataType: 'JSONP',
       success: function (res) {
-        console.log('获取成功',res)
+        console.log('获取成功', res)
       }
     })
   }

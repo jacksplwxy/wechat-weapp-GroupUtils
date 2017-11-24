@@ -44,9 +44,10 @@ page {
   text-align: center;
   float: right;
   font-size: 32rpx;
-  position: relative;
   width: 300rpx;
   height: 300rpx;
+  position: relative;
+  top: -300rpx;
 }
 
 .content {
@@ -129,12 +130,14 @@ page {
   margin: 10rpx;
   border-radius: 50%;
 }
-.share{
+
+.share {
   border-radius: 50%;
   position: absolute;
   right: 4%;
   top: 2%;
   width: 100rpx;
   height: 100rpx;
-  background: url('https://test.hytips.com/wechat/group/notice/imgs/share.svg') no-repeat 90% ;background-size:cover;
+  background: url('https://test.hytips.com/wechat/group/notice/imgs/share.svg') no-repeat 90%;
+  background-size: cover;
 }

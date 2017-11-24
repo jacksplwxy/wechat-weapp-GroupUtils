@@ -12,5 +12,26 @@
 	},
 	"appid": "wx8f14d85e38a5e092",
 	"projectname": "wechat-weapp-GroupUtils",
-	"condition": {}
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "123",
+					"pathName": "pages/notice/noticeDetail/noticeDetail",
+					"query": "",
+					"scene": "1007"
+				}
+			]
+		}
+	}
 }
