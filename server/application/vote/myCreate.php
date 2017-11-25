@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: application/json');
-$conn=mysqli_connect('localhost','root','','tongxuequn');
-mysqli_set_charset($conn,'utf8');
+$config=include '../config/dbconfig.php';
+$conn=mysqli_connect($config[HOST],$config[USERNAME],$config[PASSWORD],$config[DBNAME]);
+mysqli_set_charset($conn,$config[CHARSET]);
 $openid=$_REQUEST['openid'];
 $sql = "select * from vote_task where openid='$openid'";
 $result=mysqli_query($conn,$sql);

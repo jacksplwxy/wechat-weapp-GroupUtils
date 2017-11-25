@@ -5,8 +5,9 @@ $secret = $_GET['secret'];
 $js_code = $_GET['js_code'];
 $grant_type = $_GET['grant_type'];
 
-$conn=mysqli_connect('localhost','root','','tongxuequn');
-mysqli_set_charset($conn,'utf8');
+$config=include '../config/dbconfig.php';
+$conn=mysqli_connect($config[HOST],$config[USERNAME],$config[PASSWORD],$config[DBNAME]);
+mysqli_set_charset($conn,$config[CHARSET]);
 
 $sql = "SET NAMES UTF8";
 mysqli_query($conn,$sql);

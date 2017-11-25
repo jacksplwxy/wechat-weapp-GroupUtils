@@ -18,7 +18,7 @@
   <view class='location'>
     <input placeholder='输入地点' style='width:73%;' value='{{address}}' bindinput='bindAddressInput'></input>
     <view bindtap='getMap'>
-      <image src='../../imgs/location.svg' style='width:20px;'></image>
+      <image src='../../../imgs/location.svg' style='width:20px;'></image>
       地图
     </view>
   </view>

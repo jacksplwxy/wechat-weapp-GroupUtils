@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: application/json');
-$conn=mysqli_connect('localhost','root','','tongxuequn');
-mysqli_set_charset($conn,'utf8');
+$config=include '../config/dbconfig.php';
+$conn=mysqli_connect($config[HOST],$config[USERNAME],$config[PASSWORD],$config[DBNAME]);
+mysqli_set_charset($conn,$config[CHARSET]);
 $taskid=$_REQUEST['taskid'];
 $sql="select * from user a left join wxuser b on a.userid=b.openid where a.taskid='$taskid' AND a.userid!=''";
 $result=mysqli_query($conn,$sql);

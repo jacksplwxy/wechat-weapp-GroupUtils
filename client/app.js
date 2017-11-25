@@ -1,13 +1,13 @@
 /*
   ·原则上appid、secret、openid、session_key、enterGId这些敏感数据不要存在前端，而是后端请求到数据后生成自营session发往前端，但是由于更熟悉JS，暂时先不考虑
   ·腾讯自己封装了SDK，可直接用他们的服务器管理会话机制：https://github.com/tencentyun/wafer-client-sdk
-  ·转移到ES6语法
   ·结合openid和群id，生成小程序的用户关系网
 */
 const getUserNetwork = require('utils/shareModule.js').getUserNetwork; //引入用户关系网追踪模块
+const host = 'http://192.168.0.100'
 App({
   globalData: {
-    host: 'http://192.168.1.108',
+    host,
     AppID: 'wx8f14d85e38a5e092',
     secret: 'e15db9aaff28bcd7f2091613a43fd914',
     openid: '',

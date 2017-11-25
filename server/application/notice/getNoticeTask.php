@@ -1,7 +1,8 @@
 <?php
 header('Content-Type: application/json');
-$conn=mysqli_connect('localhost','root','','tongxuequn');
-mysqli_set_charset($conn,'utf8');
+$config=include '../config/dbconfig.php';
+$conn=mysqli_connect($config[HOST],$config[USERNAME],$config[PASSWORD],$config[DBNAME]);
+mysqli_set_charset($conn,$config[CHARSET]);
 $noticeid=$_REQUEST['noticeid'];
 $sql="select * from notice_task where noticeid='$noticeid'";
 $result=mysqli_query($conn,$sql);

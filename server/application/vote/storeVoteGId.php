@@ -3,8 +3,9 @@ header('Content-Type: application/json;charset=UTF-8');
 $groupid = $_REQUEST['gid'];
 $voteid = $_REQUEST['voteid'];
 
-$conn=mysqli_connect('localhost','root','','tongxuequn');
-mysqli_set_charset($conn,'utf8');
+$config=include '../config/dbconfig.php';
+$conn=mysqli_connect($config[HOST],$config[USERNAME],$config[PASSWORD],$config[DBNAME]);
+mysqli_set_charset($conn,$config[CHARSET]);
 //提交SQL
 $sql = "SET NAMES UTF8";
 mysqli_query($conn,$sql);
